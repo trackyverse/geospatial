@@ -34,7 +34,7 @@ jobs:
           && sudo apt-get update \
           && sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev libsqlite3-dev \
           && wget "https://raw.githubusercontent.com/r-universe-org/actions/refs/heads/v9/getdeps.R" \
-          && Rscript -e "utils::setRepositories(ind = 0, addURLS = c(CRAN = 'https://packagemanager.posit.co/cran/latest'))"
+          && Rscript -e "utils::setRepositories(ind = 0, addURLs = c(CRAN = 'https://packagemanager.posit.co/cran/latest'))"
 
       - name: Make sf on Linux
         run: |

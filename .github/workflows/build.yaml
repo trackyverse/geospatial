@@ -43,7 +43,7 @@ jobs:
           && unzip sf.zip \
           && cd src/contrib \
           && sf_file="$(ls | grep 'sf_.*[0-9]\.tar\.gz$')" \
-          && echo $sf_file
+          && echo $sf_file \
           && sudo Rscript ../../../getdeps.R $sf_file \
           && R CMD INSTALL --build $sf_file \
           && rm -fv ../../../sf*linux* \

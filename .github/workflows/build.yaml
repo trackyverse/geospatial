@@ -37,7 +37,6 @@ jobs:
 
       - name: Make sf on Linux
         run: |
-          rm sf*linux* \
           mkdir sf \
           && cd sf \
           && wget -O sf.zip "https://r-spatial.r-universe.dev/api/snapshot/zip?types=src&packages=sf" \
@@ -47,6 +46,7 @@ jobs:
           && echo $sf_file
           && sudo Rscript ../../../getdeps.R $sf_file \
           && R CMD INSTALL --build $sf_file \
+          && rm -fv ../../../sf*linux* \
           && mv sf*linux* ../../..
 
       - name: Add to repo
